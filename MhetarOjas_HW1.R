@@ -7,20 +7,25 @@ setwd("C:/Users/ojmhetar/Downloads")
 
 #Problem 1
 
-#To read without headers change value
+#To read without header value
 pricescsv<- read.table('prices.csv', sep=',', header=F)
-colnames(pricescsv)<-c('Test','One','Two')
+
+#To read with headers
+pricescsv<- read.table('prices.csv', sep=',', header=T)
+
+#Change the colnames 
+colnames(pricescsv)<-c('PRICE','SQFT','AGE', 'NE')
+
+
 pricescsv
 
-#row.names sets a variable with all the values in a single row
-rowname = row.names(mydatacsv)
+#row.names sets a variable with all the values in the first column
+rowname = row.names(pricescsv)
 
-mydatacsv
-
-?read.table 
 
 mydatatxt<- read.table('prices.txt', sep='\t', header=T)
 
+#creating a sample table
 samplefile<- read.table('sampHW1.txt', sep='\t', header=T)
 
 
